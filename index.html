@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>LocalWeb – Páginas web para negocios locales</title>
 
   <!-- Estilos -->
@@ -41,6 +41,7 @@
       justify-content: center;
       gap: 2rem;
       padding: 1rem;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -55,7 +56,7 @@
 
     section {
       padding: 2.5rem 1rem;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
     }
 
@@ -63,12 +64,18 @@
       font-size: 2rem;
       margin-bottom: 1rem;
       color: var(--azul-oscuro);
+      text-align: center;
+    }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
 
     .servicio {
       background: var(--blanco);
       padding: 2rem;
-      margin: 1.5rem 0;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
@@ -105,6 +112,7 @@
       margin: 0.5rem 0;
       color: var(--azul-claro);
       text-decoration: none;
+      font-size: 1rem;
     }
 
     footer {
@@ -147,10 +155,15 @@
       font-size: 1rem;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 1rem;
+    @media (min-width: 768px) {
+      .servicios-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .servicios-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
   </style>
@@ -158,7 +171,7 @@
 <body>
   <header data-aos="fade-down">
     <h1>LocalWeb</h1>
-    <p>Tu web. Tu momento.</p>
+    <p>Páginas web profesionales para negocios locales</p>
   </header>
 
   <nav>
@@ -175,63 +188,48 @@
 
   <section id="servicios">
     <h2 data-aos="fade-right">Planes y precios</h2>
-    <div class="servicio" data-aos="zoom-in">
-      <h3> Pack Básico</h3>
-      <ul>
-        <li>Hasta 5 secciones</li>
-        <li>Diseño personalizado</li>
-        <li>Formulario de contacto</li>
-        <li>WhatsApp y Google Maps</li>
-      </ul>
-      <p class="precio">50 €</p>
-      <a
-        class="boton"
-        href="https://wa.me/34667925318"
-        target="_blank"
-        >Solicitar Pack Básico</a
-      >
-    </div>
-    <div class="servicio" data-aos="zoom-in">
-      <h3> Pack Avanzado</h3>
-      <ul>
-        <li>Todo lo del Pack Básico</li>
-        <li>Tienda online o reservas</li>
-        <li>Pagos integrados</li>
-        <li>Secciones extra</li>
-      </ul>
-      <p class="precio">100 €</p>
-      <a
-        class="boton"
-        href="https://wa.me/34667925318"
-        target="_blank"
-        >Solicitar Pack Avanzado</a
-      >
-    </div>
-    <div class="servicio" data-aos="zoom-in">
-      <h3> Mantenimiento mensual</h3>
-      <ul>
-        <li>Hosting incluido</li>
-        <li>Soporte técnico</li>
-        <li>Actualizaciones y backups</li>
-        <li>Sin permanencia</li>
-      </ul>
-      <p class="precio">20 €/mes</p>
-      <a
-        class="boton"
-        href="https://wa.me/34667925318"
-        target="_blank"
-        >Solicitar mantenimiento</a
-      >
+    <div class="servicios-grid">
+      <div class="servicio" data-aos="zoom-in">
+        <h3>🚀 Pack Básico</h3>
+        <ul>
+          <li>Hasta 5 secciones</li>
+          <li>Diseño personalizado</li>
+          <li>Formulario de contacto</li>
+          <li>WhatsApp y Google Maps</li>
+        </ul>
+        <p class="precio">50 €</p>
+        <a class="boton" href="https://wa.me/34667925318" target="_blank">Solicitar Pack Básico</a>
+      </div>
+
+      <div class="servicio" data-aos="zoom-in">
+        <h3>💎 Pack Avanzado</h3>
+        <ul>
+          <li>Todo lo del Pack Básico</li>
+          <li>Tienda online o reservas</li>
+          <li>Pagos integrados</li>
+          <li>Secciones extra</li>
+        </ul>
+        <p class="precio">100 €</p>
+        <a class="boton" href="https://wa.me/34667925318" target="_blank">Solicitar Pack Avanzado</a>
+      </div>
+
+      <div class="servicio" data-aos="zoom-in">
+        <h3>🔧 Mantenimiento mensual</h3>
+        <ul>
+          <li>Hosting incluido</li>
+          <li>Soporte técnico</li>
+          <li>Actualizaciones y backups</li>
+          <li>Sin permanencia</li>
+        </ul>
+        <p class="precio">20 €/mes</p>
+        <a class="boton" href="https://wa.me/34667925318" target="_blank">Solicitar mantenimiento</a>
+      </div>
     </div>
   </section>
 
   <section id="sobremi" data-aos="fade-up">
     <h2>Sobre mí</h2>
-    <p>
-      Somos un equipo especializado en diseño web de negocios emergentes. Trabajamos de forma
-      , rápida y clara para ayudarte a tener una web que realmente
-      funcione y atraiga clientes.
-    </p>
+    <p>Soy diseñador web especializado en pequeños negocios. Trabajo de forma cercana, rápida y clara para ayudarte a tener una web que realmente funcione y atraiga clientes.</p>
   </section>
 
   <section id="contacto" data-aos="fade-up">
@@ -243,37 +241,15 @@
       <a href="mailto:localwebes@proton.me">📧 Email: localwebes@proton.me</a>
     </div>
 
-    <form
-      action="https://formspree.io/f/xqabrwnw"
-      method="POST"
-      novalidate
-    >
+    <form action="https://formspree.io/f/xqabrwnw" method="POST" novalidate>
       <label for="nombre">Nombre (opcional)</label>
-      <input
-        type="text"
-        id="nombre"
-        name="nombre"
-        placeholder="Tu nombre"
-        autocomplete="name"
-      />
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" autocomplete="name" />
 
       <label for="email">Email (opcional)</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        placeholder="Tu email"
-        autocomplete="email"
-      />
+      <input type="email" id="email" name="email" placeholder="Tu email" autocomplete="email" />
 
       <label for="mensaje">Mensaje *</label>
-      <textarea
-        id="mensaje"
-        name="mensaje"
-        rows="4"
-        placeholder="Tu mensaje"
-        required
-      ></textarea>
+      <textarea id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
 
       <button type="submit" class="boton">Enviar Feedback</button>
     </form>
@@ -284,17 +260,8 @@
   </footer>
 
   <!-- Botón flotante WhatsApp -->
-  <a
-    class="whatsapp-float"
-    href="https://wa.me/34667925318"
-    target="_blank"
-    aria-label="Contacto WhatsApp"
-    title="Contacto WhatsApp"
-  >
-    <img
-      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-      alt="WhatsApp"
-    />
+  <a class="whatsapp-float" href="https://wa.me/34667925318" target="_blank" aria-label="Contacto WhatsApp" title="Contacto WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
